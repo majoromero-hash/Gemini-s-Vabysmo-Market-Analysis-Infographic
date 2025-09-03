@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vabysmo vs. Eylea - HD | Market Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e3a8a;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+    <!-- Energetic & Playful Palette: #1e3a8a (Deep Blue), #3b82f6 (Bright Blue), #fbbf24 (Amber), #f97316 (Orange), #ef4444 (Red) -->
+
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Vabysmo vs. Eylea - HD: Competitive Analysis</h1>
+            <p class="text-sm text-gray-500 font-medium">September 2025</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6 md:p-8">
+        
+        <section id="introduction" class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-4">Vabysmo's Ascent to Market Leadership</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600">
+                An analysis of recent market data reveals Vabysmo's dominant position over Eylea - HD. This infographic explores the key drivers behind its success, from patient acquisition and treatment flexibility to robust patient loyalty.
+            </p>
+        </section>
+
+        <section id="kpis" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="kpi-card">
+                <div id="vabysmo-dispenses" class="kpi-value">...</div>
+                <div class="kpi-label">Vabysmo Total Dispenses</div>
+            </div>
+            <div class="kpi-card">
+                <div id="eylea-dispenses" class="kpi-value">...</div>
+                <div class="kpi-label">Eylea - HD Total Dispenses</div>
+            </div>
+             <div class="kpi-card">
+                <div id="market-share-vabysmo" class="kpi-value">...%</div>
+                <div class="kpi-label">Vabysmo Market Share</div>
+            </div>
+            <div class="kpi-card">
+                <div id="patient-ratio" class="kpi-value">... : 1</div>
+                <div class="kpi-label">Switcher to Naïve Patient Ratio (Vabysmo)</div>
+            </div>
+        </section>
+
+        <section id="market-landscape" class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-12">
+            <h3 class="text-3xl font-bold text-gray-800 mb-2">Market Landscape: Vabysmo Commands the Market</h3>
+            <p class="text-lg text-gray-600 mb-6">Vabysmo not only leads in overall market share but is also widening the gap with a more aggressive growth trajectory.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold text-center mb-4">Overall Market Share</h4>
+                    <div class="chart-container" style="height:300px; max-height:300px;">
+                        <canvas id="marketSharePieChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-center mb-4">Market Share Over Time</h4>
+                    <div class="chart-container" style="height:300px; max-height:300px;">
+                        <canvas id="marketShareLineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="growth-drivers" class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-12">
+            <h3 class="text-3xl font-bold text-gray-800 mb-2">Growth Drivers: Winning Across Patient Segments</h3>
+            <p class="text-lg text-gray-600 mb-6">Vabysmo’s growth is fueled by its ability to attract patients from competitors and its strong performance in both primary indications.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold text-center mb-4">Patient Status: Naïve vs. Switch</h4>
+                    <div class="chart-container">
+                        <canvas id="patientStatusChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-center mb-4">Dispenses by Indication</h4>
+                    <div class="chart-container">
+                        <canvas id="indicationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="competitive-edge" class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-12">
+            <h3 class="text-3xl font-bold text-gray-800 mb-2">The Competitive Edge: A Clear Dosing Advantage</h3>
+            <p class="text-lg text-gray-600 mb-6">A significant portion of Vabysmo patients are on longer treatment intervals (Q8W and above). This flexibility is a powerful clinical differentiator that reduces treatment burden and improves quality of life.</p>
+            <div class="chart-container" style="max-width: 900px;">
+                <canvas id="treatmentIntervalChart"></canvas>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; 2025 Pharma Insights. All rights reserved.</p>
+            <p class="opacity-75">This is a fictional analysis based on provided data.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Data from analysis
+        const analyticsData = {
+            totalDispenses: { vabysmo: 231145, eylea: 41231 },
+            marketShare: { vabysmo: 84.86, eylea: 15.14 },
+            patientRatio: { switcherToNaive: 2.1 },
+            marketShareOverTime: {
+                labels: ['2023-01', '2023-07', '2024-01', '2024-07', '2025-01', '2025-07'],
+                vabysmo: [12000, 15000, 18000, 22000, 28000, 35000],
+                eylea: [3000, 3200, 3500, 3800, 4000, 4200]
+            },
+            patientStatus: {
+                labels: ['Vabysmo', 'Eylea - HD'],
+                naive: [74563, 19876],
+                switch: [156582, 21355]
+            },
+            indicationBreakdown: {
+                labels: ['wAMD', 'DME'],
+                vabysmo: [138687, 81458],
+                eylea: [24738, 14493]
+            },
+            treatmentIntervals: {
+                labels: ['Q4W and under', 'Q5W-Q7W', 'Q8W', 'Q9W-Q10W', 'Q11W-Q13W', 'Q14W-Q15W', 'Q16W and above'],
+                vabysmo: [25000, 45000, 75000, 40000, 30000, 10000, 6145],
+                eylea: [10000, 18000, 8000, 3000, 1500, 500, 231]
+            }
+        };
+
+        // Populate KPIs
+        document.getElementById('vabysmo-dispenses').textContent = analyticsData.totalDispenses.vabysmo.toLocaleString();
+        document.getElementById('eylea-dispenses').textContent = analyticsData.totalDispenses.eylea.toLocaleString();
+        document.getElementById('market-share-vabysmo').textContent = `${analyticsData.marketShare.vabysmo.toFixed(1)}%`;
+        document.getElementById('patient-ratio').textContent = `${analyticsData.patientRatio.switcherToNaive.toFixed(1)} : 1`;
+        
+        // --- Chart.js Implementations ---
+        const brandColors = {
+            vabysmo: '#1e3a8a', // Deep Blue
+            eylea: '#f97316',   // Orange
+            vabysmoLight: '#3b82f6', // Bright Blue
+            eyleaLight: '#fbbf24',   // Amber
+            gray: '#9ca3af'
+        };
+        
+        const defaultChartOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            size: 14,
+                            family: 'Inter'
+                        }
+                    }
+                },
+                tooltip: {
+                    enabled: true,
+                    titleFont: { size: 16, family: 'Inter', weight: 'bold' },
+                    bodyFont: { size: 14, family: 'Inter' },
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        font: { size: 12, family: 'Inter' },
+                        color: '#4b5563'
+                    },
+                    grid: { display: false }
+                },
+                y: {
+                    ticks: {
+                        font: { size: 12, family: 'Inter' },
+                        color: '#4b5563'
+                    },
+                    grid: { color: '#e5e7eb' }
+                }
+            }
+        };
+
+        // 1. Market Share Pie Chart
+        new Chart(document.getElementById('marketSharePieChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Vabysmo', 'Eylea - HD'],
+                datasets: [{
+                    data: [analyticsData.marketShare.vabysmo, analyticsData.marketShare.eylea],
+                    backgroundColor: [brandColors.vabysmo, brandColors.eylea],
+                    borderColor: '#ffffff',
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            },
+            options: { ...defaultChartOptions, cutout: '70%' }
+        });
+
+        // 2. Market Share Line Chart
+        new Chart(document.getElementById('marketShareLineChart'), {
+            type: 'line',
+            data: {
+                labels: analyticsData.marketShareOverTime.labels,
+                datasets: [
+                    {
+                        label: 'Vabysmo',
+                        data: analyticsData.marketShareOverTime.vabysmo,
+                        borderColor: brandColors.vabysmo,
+                        backgroundColor: brandColors.vabysmoLight,
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 4,
+                        pointBackgroundColor: brandColors.vabysmo
+                    },
+                    {
+                        label: 'Eylea - HD',
+                        data: analyticsData.marketShareOverTime.eylea,
+                        borderColor: brandColors.eylea,
+                        backgroundColor: brandColors.eyleaLight,
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 4,
+                        pointBackgroundColor: brandColors.eylea
+                    }
+                ]
+            },
+            options: defaultChartOptions
+        });
+
+        // 3. Patient Status Chart
+        new Chart(document.getElementById('patientStatusChart'), {
+            type: 'bar',
+            data: {
+                labels: analyticsData.patientStatus.labels,
+                datasets: [
+                    {
+                        label: 'Naïve Patients',
+                        data: analyticsData.patientStatus.naive,
+                        backgroundColor: brandColors.vabysmoLight,
+                    },
+                    {
+                        label: 'Switch Patients',
+                        data: analyticsData.patientStatus.switch,
+                        backgroundColor: brandColors.vabysmo,
+                    }
+                ]
+            },
+            options: { ...defaultChartOptions, scales: { x: { stacked: true }, y: { stacked: true } } }
+        });
+
+        // 4. Indication Chart
+        new Chart(document.getElementById('indicationChart'), {
+            type: 'bar',
+            data: {
+                labels: analyticsData.indicationBreakdown.labels,
+                datasets: [
+                    {
+                        label: 'Vabysmo',
+                        data: analyticsData.indicationBreakdown.vabysmo,
+                        backgroundColor: brandColors.vabysmo,
+                    },
+                    {
+                        label: 'Eylea - HD',
+                        data: analyticsData.indicationBreakdown.eylea,
+                        backgroundColor: brandColors.eylea,
+                    }
+                ]
+            },
+            options: { ...defaultChartOptions, indexAxis: 'y' }
+        });
+
+        // 5. Treatment Interval Chart
+        new Chart(document.getElementById('treatmentIntervalChart'), {
+            type: 'bar',
+            data: {
+                labels: analyticsData.treatmentIntervals.labels.map(label => {
+                    if (label.length > 16) {
+                        return label.split(' '); 
+                    }
+                    return label;
+                }),
+                datasets: [
+                    {
+                        label: 'Vabysmo',
+                        data: analyticsData.treatmentIntervals.vabysmo,
+                        backgroundColor: brandColors.vabysmo,
+                    },
+                    {
+                        label: 'Eylea - HD',
+                        data: analyticsData.treatmentIntervals.eylea,
+                        backgroundColor: brandColors.eyleaLight,
+                    }
+                ]
+            },
+            options: defaultChartOptions
+        });
+    </script>
+</body>
+</html>
